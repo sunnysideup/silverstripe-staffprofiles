@@ -1,0 +1,11 @@
+/**
+ * @author: nicolaas[at]sunnysideup.co.nz
+ **/
+
+.StaffProfileOne { clear: left;}
+	.StaffProfileOne .StaffProfilePicture{float: left; width: 250px;}
+	.StaffProfileOne .StaffProfileText{ margin-left: 270px;}
+		.StaffProfileOne .StaffProfileText .StaffProfileName{}
+		.StaffProfileOne .StaffProfileText .StaffProfileDescription{}
+		.StaffProfileOne .StaffProfileText .StaffProfileEmail{}
+
