@@ -1,0 +1,20 @@
+{
+	"name": "silverstripe/staffprofiles",
+	"type": "silverstripe-module",
+	"description": "add staff profiles to a Silverstripe Website",
+	"homepage": "http://www.silverstripe-webdevelopment.com",
+	"keywords": ["staffprofiles", "silverstripe"],
+	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
+	"authors":[
+		{
+			"name": "Nicolaas Francken",
+			"homepage": "https://github.com/sunnysideup",
+			"email" : "modules@sunnysideup.co.nz",
+			"role" : "lead developer"
+		}
+	],
+	"require":{
+		"php": ">=5.3.2",
+		"silverstripe/framework": "3.0.*"
+	}
+}
