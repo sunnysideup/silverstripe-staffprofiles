@@ -48,14 +48,36 @@ class StaffProfile extends DataObject {
 		parent::populateDefaults();
 	}
 
-  public function EmailObfuscatorName() {
-		$obj = HideEmail::convert_email($this->Email);
-		return $obj->text;
+
+	/**
+	 * Obscure all email links in StringField.
+	 * Matches mailto:user@example.com as well as user@example.com
+	 *
+	 * @return string
+	 */
+	public function EncodedEmailLink() {
+		if(class_exists("HideEmail") && $this->Email) {
+			$obj = HideEmail::convert_email($this->Email, "Enquiry from www.davidtrubridge.com");
+			return $obj->mailto;
+		}
+		elseif($this->Email) {
+			return "mailto:".$this->Email;
+		}
 	}
 
-	public function EmailObfuscatorLink() {
-		$obj = HideEmail::convert_email($this->Email);
-		return $obj->mailto;
+	/**
+	 * Obscure all email links in StringField.
+	 * Matches mailto:user@example.com as well as user@example.com
+	 *
+	 * @return string
+	 */
+	public function EncodedEmailText() {
+		if(class_exists("HideEmail") && $this->Email) {
+			return HideEmail::encode_string(str_replace("@", "[at]", $this->Email));
+		}
+		elseif($this->Email) {
+			return $this->Email;
+		}
 	}
 
 	function onBeforeWrite() {

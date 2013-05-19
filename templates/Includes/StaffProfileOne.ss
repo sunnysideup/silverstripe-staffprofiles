@@ -3,6 +3,6 @@
 	<div class="StaffProfileText">
 		<h2 class="StaffProfileName">$Name</h2>
 		<p class="StaffProfileDescription">$Description</p>
-		<% if EmailObfuscator %><p class="StaffProfileEmail">Email: $EmailObfuscator</p><% end_if %>
+		<% if EncodedEmailLink %><p class="StaffProfileEmail">Email: <a href="$EncodedEmailLink">$EncodedEmailText</a></p><% end_if %>
 	</div>
 </li>
