@@ -25,14 +25,12 @@ class StaffProfilesPage extends Page {
 		$fields = parent::getCMSFields();
 		if(!self::get_use_child_pages_rather_than_dataobject()) {
 			$fields->addFieldToTab(
-				"Root.Content.Profiles",
-				new HasManyComplexTableField(
-					$controller = $this,
-					$name = "StaffProfiles",
-					$sourceClass = "StaffProfile",
-					StaffProfile::$summary_fields,
-					$detailFormFields = null,
-					$sourceFilter = "ParentID = ".$this->ID
+				"Root.Profiles",
+				new GridField(
+					"StaffProfiles", 
+					"Staff Profiles", 
+					StaffProfile::get(), 
+					GridFieldConfig_RelationEditor::create()
 				)
 			);
 		}
@@ -41,7 +39,7 @@ class StaffProfilesPage extends Page {
 
 	function StaffProfilesAll() {
 		if(StaffProfilesPage::get_use_child_pages_rather_than_dataobject()) {
-			return DataObject::get("StaffProfilesOnePerson", "ParentID = ".$this->ID);
+			return StaffProfilesOnePerson::get()->filter(array("ParentID" => $this->ID));
 		}
 		else {
 			return $this->StaffProfiles();

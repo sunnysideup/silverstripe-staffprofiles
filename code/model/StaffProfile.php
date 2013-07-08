@@ -86,7 +86,7 @@ class StaffProfile extends DataObject {
 			$this->Sort = 100;
 		}
 		if(!$this->ParentID) {
-			$page = DataObject::get_one("StaffProfilesPage");
+			$page = StaffProfilesPage::get()->First();
 			$this->ParentID = $page->ID;
 		}
 	}

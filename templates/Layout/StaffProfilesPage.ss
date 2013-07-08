@@ -1,10 +1,10 @@
 <h1>$Title</h1>
 $Content
-<% if StaffProfilesAll %>
+<% if StaffProfilesAll.count %>
 <ul id="StaffProfiles">
-	<% control StaffProfilesAll %>
+	<% loop StaffProfilesAll %>
 		<% include StaffProfileOne %>
-	<% end_control %>
+	<% end_loop %>
 </ul>
 <% end_if %>
 $Form
