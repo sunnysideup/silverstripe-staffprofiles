@@ -8,7 +8,7 @@
 
 class StaffProfile extends DataObject {
 
-	public static $db = array(
+	private static $db = array(
 		"Name" => "Varchar(255)",
 		"Position" => "Varchar(255)",
 		"Description" => "Text",
@@ -16,7 +16,7 @@ class StaffProfile extends DataObject {
 		"Sort" => "Int"
 	);
 
-	public static $has_one = array(
+	private static $has_one = array(
 		"ProfilePicture" => "Image",
 		"Parent" => "StaffProfilesPage"
 	);
@@ -27,19 +27,19 @@ class StaffProfile extends DataObject {
 	);
 
 	//formatting
-	public static $searchable_fields = array("Name" => "PartialMatchFilter");
+	private static $searchable_fields = array("Name" => "PartialMatchFilter");
 
-	public static $field_labels = array("Sort" => "Sort Index Number for Sorting (lower numbers first)");
+	private static $field_labels = array("Sort" => "Sort Index Number for Sorting (lower numbers first)");
 
-	public static $summary_fields = array("Name" => "Name", "Email" => "Email", "Title" => "Title");
+	private static $summary_fields = array("Name" => "Name", "Email" => "Email", "Title" => "Title");
 
-	public static $singular_name = "Staff Profile";
+	private static $singular_name = "Staff Profile";
 
-	public static $plural_name = "Staff Profiles";
+	private static $plural_name = "Staff Profiles";
 
-	public static $default_sort = "Sort ASC, Name ASC";
+	private static $default_sort = "Sort ASC, Name ASC";
 
-	public static $defaults = array(
+	private static $defaults = array(
 		"Sort" => 100
 	);
 

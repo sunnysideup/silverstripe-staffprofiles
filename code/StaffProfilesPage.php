@@ -7,17 +7,17 @@
  */
 class StaffProfilesPage extends Page {
 
-	protected static $use_child_pages_rather_than_dataobject = false;
+	private static $use_child_pages_rather_than_dataobject = false;
 		static function set_use_child_pages_rather_than_dataobject($v) {self::$use_child_pages_rather_than_dataobject = $v;}
 		static function get_use_child_pages_rather_than_dataobject() {return self::$use_child_pages_rather_than_dataobject;}
 
-	public static $icon = "mysite/images/treeicons/StaffProfilesPage";
+	private static $icon = "mysite/images/treeicons/StaffProfilesPage";
 
-	public static $allowed_children = array("StaffProfilesOnePerson"); //can also be "none";
+	private static $allowed_children = array("StaffProfilesOnePerson"); //can also be "none";
 
-	public static $default_child = "StaffProfilesOnePerson";
+	private static $default_child = "StaffProfilesOnePerson";
 
-	public static $has_many = array(
+	private static $has_many = array(
 		"StaffProfiles" => "StaffProfile"
 	);
 
@@ -27,9 +27,9 @@ class StaffProfilesPage extends Page {
 			$fields->addFieldToTab(
 				"Root.Profiles",
 				new GridField(
-					"StaffProfiles", 
-					"Staff Profiles", 
-					StaffProfile::get(), 
+					"StaffProfiles",
+					"Staff Profiles",
+					StaffProfile::get(),
 					GridFieldConfig_RelationEditor::create()
 				)
 			);
