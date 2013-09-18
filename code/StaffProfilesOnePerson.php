@@ -47,14 +47,14 @@ class StaffProfilesOnePerson extends Page {
   public function EmailObfuscatorName() {
 		$obj = HideEmail::convert_email($this->Email);
 		if($obj) {
-			return $obj->text;
+			return $obj->Text;
 		}
 	}
 
 	public function EmailObfuscatorLink() {
 		$obj = HideEmail::convert_email($this->Email);
 		if($obj) {
-			return $obj->mailto;
+			return $obj->MailTo;
 		}
 	}
 
