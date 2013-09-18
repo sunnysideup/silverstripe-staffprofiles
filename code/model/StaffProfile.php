@@ -73,7 +73,7 @@ class StaffProfile extends DataObject {
 	 */
 	public function EncodedEmailText() {
 		if(class_exists("HideMailto") && $this->Email) {
-			$obj = HideMailto::encode_string($this->Email, "Enquiry from www.davidtrubridge.com");
+			$obj = HideMailto::convert_email($this->Email, "Enquiry from www.davidtrubridge.com");
 			return $obj->Text;
 		}
 		elseif($this->Email) {
