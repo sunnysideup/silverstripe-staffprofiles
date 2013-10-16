@@ -7,21 +7,21 @@
  */
 class StaffProfilesOnePerson extends Page {
 
-	static $icon = "mysite/images/treeicons/StaffProfilesOnePerson";
+	private static $icon = "mysite/images/treeicons/StaffProfilesOnePerson";
 
-	static $allowed_children = "none"; //can also be "none";
+	private static $allowed_children = "none"; //can also be "none";
 
-	static $default_parent = "StaffProfilesPage"; // *URLSegment* of default parent node.
+	private static $default_parent = "StaffProfilesPage"; // *URLSegment* of default parent node.
 
-	static $can_be_root = false; //default is true
+	private static $can_be_root = false; //default is true
 	//parents and children in classes
 
-	static $db = array(
+	private static $db = array(
 		"Email" => "Varchar(100)",
 		"Position" => "Varchar(100)"
 	);
 
-	static $has_one = array(
+	private static $has_one = array(
 		"ProfilePicture" => "Image"
 	);
 

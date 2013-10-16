@@ -22,7 +22,7 @@ class StaffProfile extends DataObject {
 	);
 
 	//database related settings
-	static $indexes = array(
+	private static $indexes = array(
 		"Sort" => true
 	);
 
