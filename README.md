@@ -1,6 +1,5 @@
-###############################################
 STAFF PROFILES
-###############################################
+================================================================================
 
 Add profiles of a bunch of people (e.g. employees / shareholders / volunteers)
 to your Silverstripe Website.
