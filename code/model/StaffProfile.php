@@ -57,7 +57,7 @@ class StaffProfile extends DataObject {
 	 */
 	public function EncodedEmailLink() {
 		if(class_exists("HideMailto") && $this->Email) {
-			$obj = HideMailto::convert_email($this->Email, "Enquiry from www.davidtrubridge.com");
+			$obj = HideMailto::convert_email($this->Email, , "Enquiry from ".Director::absoluteBaseURL());
 			return $obj->MailTo;
 		}
 		elseif($this->Email) {
@@ -73,11 +73,11 @@ class StaffProfile extends DataObject {
 	 */
 	public function EncodedEmailText() {
 		if(class_exists("HideMailto") && $this->Email) {
-			$obj = HideMailto::convert_email($this->Email, "Enquiry from www.davidtrubridge.com");
+			$obj = HideMailto::convert_email($this->Email, "Enquiry from ".Director::absoluteBaseURL());
 			return $obj->Text;
 		}
 		elseif($this->Email) {
-			return $this->Text;
+			return $this->Email;
 		}
 	}
 
