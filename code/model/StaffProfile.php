@@ -49,6 +49,17 @@ class StaffProfile extends DataObject {
 	}
 
 
+	protected $emailObject = null;
+
+	protected function retrieveEmailObject(){
+		if(!$this->emailObject) {
+			if(class_exists("HideMailto")) {
+				$this->emailObject = HideMailto::convert_email($this->Email, "Enquiry from ".Director::absoluteBaseURL());
+			}
+		}
+		return $this->emailObject;
+	}
+
 	/**
 	 * Obscure all email links in StringField.
 	 * Matches mailto:user@example.com as well as user@example.com
@@ -56,8 +67,9 @@ class StaffProfile extends DataObject {
 	 * @return string
 	 */
 	public function EncodedEmailLink() {
-		if(class_exists("HideMailto") && $this->Email) {
-			$obj = HideMailto::convert_email($this->Email, , "Enquiry from ".Director::absoluteBaseURL());
+		$obj = $this->retrieveEmailObject();
+		if($obj) {
+			$obj = HideMailto::convert_email($this->Email, "Enquiry from ".Director::absoluteBaseURL());
 			return $obj->MailTo;
 		}
 		elseif($this->Email) {
@@ -72,7 +84,8 @@ class StaffProfile extends DataObject {
 	 * @return string
 	 */
 	public function EncodedEmailText() {
-		if(class_exists("HideMailto") && $this->Email) {
+		$obj = $this->retrieveEmailObject();
+		if($obj) {
 			$obj = HideMailto::convert_email($this->Email, "Enquiry from ".Director::absoluteBaseURL());
 			return $obj->Text;
 		}

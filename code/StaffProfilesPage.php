@@ -7,7 +7,7 @@
  */
 class StaffProfilesPage extends Page {
 
-	private static $use_child_pages_rather_than_dataobject = false;
+	private static $use_child_pages_rather_than_dataobjects = false;
 
 	private static $icon = "mysite/images/treeicons/StaffProfilesPage";
 
@@ -21,7 +21,7 @@ class StaffProfilesPage extends Page {
 
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
-		if(!$this->Config()->get("use_child_pages_rather_than_dataobject")) {
+		if(!$this->Config()->get("use_child_pages_rather_than_dataobjects")) {
 			$fields->addFieldToTab(
 				"Root.Profiles",
 				new GridField(
@@ -36,7 +36,7 @@ class StaffProfilesPage extends Page {
 	}
 
 	function StaffProfilesAll() {
-		if(StaffProfilesPage::get_use_child_pages_rather_than_dataobject()) {
+		if(Config::inst()->get("StaffProfilesPage", "use_child_pages_rather_than_dataobjects")) {
 			return StaffProfilesOnePerson::get()->filter(array("ParentID" => $this->ID));
 		}
 		else {

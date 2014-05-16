@@ -31,7 +31,7 @@ class StaffProfilesOnePerson extends Page {
 		$fields->replaceField("MenuTitle", new TextField("MenuTitle", "Name for use in menus"));
 		$fields->addFieldToTab("Root.PersonalDetails", new TextField("Email", "Email"));
 		$fields->addFieldToTab("Root.PersonalDetails", new TextField("Position", "Position"));
-		$fields->addFieldToTab("Root.PersonalDetails", new UploadField("ProfilePicture", "ProfilePicture"));
+		//$fields->addFieldToTab("Root.PersonalDetails", new UploadField("ProfilePicture", "Picture"));
 		return $fields;
 	}
 
