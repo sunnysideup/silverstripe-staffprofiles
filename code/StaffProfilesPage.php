@@ -52,7 +52,7 @@ class StaffProfilesPage_Controller extends Page_Controller {
 
 	function init() {
 		parent::init();
-		Requirements::themedCSS("StaffProfilesPage");
+		Requirements::themedCSS("StaffProfilesPage", "staffprofiles");
 	}
 
 

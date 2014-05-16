@@ -81,7 +81,7 @@ class StaffProfilesOnePerson_Controller extends Page_Controller {
 
 	function init() {
 		parent::init();
-		Requirements::themedCSS("StaffProfilesOnePerson");
+		Requirements::themedCSS("StaffProfilesOnePerson", "staffprofiles");
 	}
 
 }

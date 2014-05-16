@@ -1,6 +1,6 @@
 <h1>$Title</h1>
 $Content
-<% if StaffProfilesAll.count %>
+<% if StaffProfilesAll %>
 <ul id="StaffProfiles">
 	<% loop StaffProfilesAll %>
 		<% include StaffProfileOne %>
