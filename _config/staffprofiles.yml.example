@@ -1,0 +1,2 @@
+StaffProfilesPage:
+  use_child_pages_rather_than_dataobjects: true
