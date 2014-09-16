@@ -1,0 +1,12 @@
+en:
+  StaffProfilePage:
+    PLURALNAME: 'Staff Profile Pages'
+    SINGULARNAME: 'Staff Profile Page'
+    DESCRIPTION: 'An individual staff profile page'
+  StaffProfilePage_Category:
+    PLURALNAME: 'Categories'
+    SINGULARNAME: 'Category'
+  StaffProfilesHolderPage:
+    PLURALNAME: 'Staff Holder Pages'
+    SINGULARNAME: 'Staff Holder Page'
+    DESCRIPTION: 'Displays listings of staff profiles'

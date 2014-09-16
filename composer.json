@@ -1,0 +1,20 @@
+{
+	"name": "linkdup/silverstripe-staffprofiles",
+	"description": "SilverStripe module for staff profiles",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "staff profiles"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mattias Lindgren",
+			"email": "web@enia.com.au"
+		}
+	],
+	"require": {
+		"silverstripe/framework": "3.*",
+		"linkdup/silverstripe-seofriendlydataobject": "dev-master"
+	},
+	"extra": {
+		"installer-name": "staffprofiles"
+	}
+}
