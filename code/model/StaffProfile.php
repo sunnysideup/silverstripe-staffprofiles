@@ -78,31 +78,21 @@ class StaffProfile extends DataObject {
 
 	}
 
-	protected $emailObject = null;
-
-	protected function retrieveEmailObject(){
-		if(!$this->emailObject) {
-			if(class_exists("HideMailto")) {
-				$this->emailObject = HideMailto::convert_email($this->Email, "Enquiry from ".Director::absoluteBaseURL());
-			}
-		}
-		return $this->emailObject;
-	}
-
 	/**
 	 * Obscure all email links in StringField.
 	 * Matches mailto:user@example.com as well as user@example.com
 	 *
-	 * @return string
+	 * @return string | Null
 	 */
 	public function EncodedEmailLink() {
-		$obj = $this->retrieveEmailObject();
-		if($obj) {
-			$obj = HideMailto::convert_email($this->Email, $this->SubjectLineCreator());
-			return $obj->MailTo;
-		}
-		elseif($this->Email) {
-			return "mailto:".$this->Email;
+		if($email = $this->getBestEmail()) {
+			$obj = $this->retrieveEmailObject();
+			if($obj) {
+				return $obj->MailTo;
+			}
+			else {
+				return "mailto:".$email;
+			}
 		}
 	}
 
@@ -113,13 +103,14 @@ class StaffProfile extends DataObject {
 	 * @return string
 	 */
 	public function EncodedEmailText() {
-		$obj = $this->retrieveEmailObject();
-		if($obj) {
-			$obj = HideMailto::convert_email($this->Email, $this->SubjectLineCreator());
-			return $obj->Text;
-		}
-		elseif($this->Email) {
-			return $this->Email;
+		if($email = $this->getBestEmail()) {
+			$obj = $this->retrieveEmailObject();
+			if($obj) {
+				return $obj->Text;
+			}
+			else {
+				return $email;
+			}
 		}
 	}
 
@@ -175,4 +166,45 @@ class StaffProfile extends DataObject {
 		}
 		return $str;
 	}
+
+
+	/**
+	 * @var EmailObject
+	 */
+	protected $emailObject = null;
+
+	/**
+	 *
+	 * @return EmailObject | NULL
+	 */
+	protected function retrieveEmailObject(){
+		if(!$this->emailObject) {
+			if(class_exists("HideMailto")) {
+				if($email = $this->getBestEmail()) {
+					$this->emailObject = HideMailto::convert_email($email, $this->SubjectLineCreator());
+				}
+			}
+			else {
+				user_error("This module requires Sunnysideup/hidemailto, but it can function without it", E_USER_NOTICE);
+			}
+		}
+		return $this->emailObject;
+	}
+
+	/**
+	 * finds the best email available.
+	 *
+	 * @return String
+	 */
+	protected function getBestEmail(){
+		if($this->Email) {
+			$email = $this->Email;
+		}
+		else {
+			$email = $this->Parent()->DefaultEmail;
+		}
+		return $email;
+	}
+
+
 }

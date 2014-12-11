@@ -14,6 +14,7 @@ class StaffProfilesPage extends Page {
 	private static $default_child = "StaffProfilesOnePerson";
 
 	private static $db = array(
+		"DefaultEmail" => "Varchar(255)",
 		"SubjectLine" => "Varchar(255)"
 	);
 
@@ -25,10 +26,16 @@ class StaffProfilesPage extends Page {
 		$fields = parent::getCMSFields();
 		$fields->addFieldToTab("Root.Profiles",
 			new TextField(
+				"DefaultEmail",
+				_t("StaffProfilesPage.DEFAULT_EMAIL_EXPLANATION", "This is the default email that will be used if a staff member does nt have a unique email")
+			)
+		);
+		$fields->addFieldToTab("Root.Profiles",
+			new TextField(
 				"SubjectLine",
-				_t("StaffProfilesPage.SUBJECT_LINE_EXPLANATION", "Subject line for email, you can use [").
+				_t("StaffProfilesPage.SUBJECT_LINE_EXPLANATION", "Subject line for email, you can use [".
 				implode("], [", array_keys(Config::inst()->get("StaffProfile", "subject_place_holders"))).
-			"]" . " as placeholders"
+			"]" . " as placeholders")
 			)
 		);
 		$fields->addFieldToTab(
