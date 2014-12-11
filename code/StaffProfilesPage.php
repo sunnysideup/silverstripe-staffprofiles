@@ -13,12 +13,24 @@ class StaffProfilesPage extends Page {
 
 	private static $default_child = "StaffProfilesOnePerson";
 
+	private static $db = array(
+		"SubjectLine" => "Varchar(255)"
+	);
+
 	private static $has_many = array(
 		"StaffProfiles" => "StaffProfile"
 	);
 
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
+		$fields->addFieldToTab("Root.Profiles",
+			new TextField(
+				"SubjectLine",
+				_t("StaffProfilesPage.SUBJECT_LINE_EXPLANATION", "Subject line for email, you can use [").
+				implode("], [", array_keys(Config::inst()->get("StaffProfile", "subject_place_holders"))).
+			"]" . " as placeholders"
+			)
+		);
 		$fields->addFieldToTab(
 			"Root.Profiles",
 			new GridField(
