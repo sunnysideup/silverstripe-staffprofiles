@@ -68,14 +68,21 @@ class StaffProfile extends DataObject {
 		parent::populateDefaults();
 	}
 
+	public function getCMSFields(){
+		$fields = parent::getCMSFields();
+		$field = $fields->dataFieldByName("SubjectLine");
+		$field->setRightTitle(
+			_t("StaffProfile.PLACEHOLDER_EXPLANATION", "you can use the following placeholders")
+			. ": ["
+			. implode("], [", array_keys($this->Config()->get("subject_place_holders")))
+			. "]"
+		);
+		return $fields;
+	}
+
 	public function fieldLabels($includeRelations = true) {
 		$labels = parent::fieldLabels($includeRelations);
-		$labels["SubjectLine"] .=
-			_t("StaffProfile.PLACEHOLDER_EXPLANATION", "you can use the following placeholders: [").
-			implode("], [", array_keys($this->Config()->get("subject_place_holders"))).
-			"]";
 		return $labels;
-
 	}
 
 	/**
