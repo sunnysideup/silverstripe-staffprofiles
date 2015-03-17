@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="StaffProfilesPage_Controller" namespace="" name="StaffProfilesPage_Controller" abstract="false" final="false" start="61" end="69">
+  <file path="/var/www/_modules/staffprofiles/trunk/docs/en/phpdox/../../../code" file="StaffProfilesPage.php" realpath="/var/www/_modules/staffprofiles/trunk/code/StaffProfilesPage.php" size="1737" time="2015-03-14T10:23:21+13:00" unixtime="1426281801" sha1="1362d884b8c13eb3c5ecade8d7f88f260fa721dd" relative="code/StaffProfilesPage.php"/>
+  <extends full="Page_Controller" namespace="" name="Page_Controller"/>
+  <method name="init" start="63" end="66" abstract="false" final="false" static="false" visibility="public"/>
+</class>

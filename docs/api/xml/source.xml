@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.net/src">
+  <dir name="/var/www/_modules/staffprofiles/trunk">
+    <file name="_config.php" size="69" time="2015-03-14T10:23:21+13:00" unixtime="1426281801" sha1="801344ebb82efd4b7bd4572f0ff7eb20a06f5927" xml="tokens/_config.php.xml"/>
+    <dir name="code">
+      <dir name="model">
+        <file name="StaffProfile.php" size="5064" time="2015-03-14T10:23:21+13:00" unixtime="1426281801" sha1="3c8131b38d532aad1e5224783c118f7b2121364d" xml="tokens/code/model/StaffProfile.php.xml"/>
+      </dir>
+      <file name="StaffProfilesPage.php" size="1737" time="2015-03-14T10:23:21+13:00" unixtime="1426281801" sha1="1362d884b8c13eb3c5ecade8d7f88f260fa721dd" xml="tokens/code/StaffProfilesPage.php.xml"/>
+    </dir>
+  </dir>
+</source>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="StaffProfile" namespace="" name="StaffProfile" abstract="false" final="false" start="9" end="217">
+  <file path="/var/www/_modules/staffprofiles/trunk/docs/en/phpdox/../../../code/model" file="StaffProfile.php" realpath="/var/www/_modules/staffprofiles/trunk/code/model/StaffProfile.php" size="5064" time="2015-03-14T10:23:21+13:00" unixtime="1426281801" sha1="3c8131b38d532aad1e5224783c118f7b2121364d" relative="code/model/StaffProfile.php"/>
+  <docblock>
+    <description compact="author: nicolaas[at]sunnysideup.co.nz description: individual staff profile"/>
+  </docblock>
+  <extends full="DataObject" namespace="" name="DataObject"/>
+  <member name="db" type="array" visibility="private" line="11"/>
+  <member name="has_one" type="array" visibility="private" line="20"/>
+  <member name="indexes" type="array" visibility="private" line="26"/>
+  <member name="searchable_fields" type="array" visibility="private" line="31"/>
+  <member name="field_labels" type="array" visibility="private" line="33"/>
+  <member name="summary_fields" type="array" visibility="private" line="38"/>
+  <member name="singular_name" type="string" default="&quot;Staff Profile&quot;" visibility="private" line="40"/>
+  <member name="plural_name" type="string" default="&quot;Staff Profiles&quot;" visibility="private" line="42"/>
+  <member name="default_sort" type="string" default="&quot;Sort ASC, Name ASC&quot;" visibility="private" line="44"/>
+  <member name="defaults" type="array" visibility="private" line="46"/>
+  <member name="subject_place_holders" type="array" visibility="private" line="58">
+    <docblock>
+      <description compact="replacement placeholders [xxx] =&gt; yyy where xxx is the string the CMS user types and yyy the replacement field / relation."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="populateDefaults" start="66" end="69" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getCMSFields" start="71" end="81" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="fieldLabels" start="83" end="86" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="includeRelations" byreference="false" type="{unknown}" default="true"/>
+  </method>
+  <method name="EncodedEmailLink" start="94" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Obscure all email links in StringField.">Matches mailto:user@example.com as well as user@example.com</description>
+      <return description="| Null" type="string"/>
+    </docblock>
+  </method>
+  <method name="EncodedEmailText" start="112" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Obscure all email links in StringField.">Matches mailto:user@example.com as well as user@example.com</description>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="onBeforeWrite" start="124" end="133" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="SubjectLineCreator" start="140" end="175" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="puts together a subject line with replacements"/>
+      <return type="object">
+        <type full="String" namespace="" name="String"/>
+      </return>
+    </docblock>
+  </method>
+  <member name="emailObject" type="{unknown}" default="null" visibility="protected" line="181">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="EmailObject" namespace="" name="EmailObject"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="retrieveEmailObject" start="187" end="199" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <return description="| NULL" type="object">
+        <type full="EmailObject" namespace="" name="EmailObject"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getBestEmail" start="206" end="214" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="finds the best email available."/>
+      <return type="object">
+        <type full="String" namespace="" name="String"/>
+      </return>
+    </docblock>
+  </method>
+</class>

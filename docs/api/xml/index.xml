@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="/var/www/_modules/staffprofiles/trunk">
+  <namespace name="">
+    <class name="StaffProfile" src="code/model/StaffProfile.php" description="author: nicolaas[at]sunnysideup.co.nz description: individual staff profile" xml="classes/StaffProfile.xml"/>
+    <class name="StaffProfilesPage" src="code/StaffProfilesPage.php" description="author nicolaas[at]sunnysideup.co.nz description: displays a list of staff profiles" xml="classes/StaffProfilesPage.xml"/>
+    <class name="StaffProfilesPage_Controller" src="code/StaffProfilesPage.php" xml="classes/StaffProfilesPage_Controller.xml"/>
+  </namespace>
+</index>
