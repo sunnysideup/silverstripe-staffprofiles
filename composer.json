@@ -3,7 +3,7 @@
 	"type": "silverstripe-module",
 	"description": "add staff profiles to a Silverstripe Website",
 	"homepage": "http://www.silverstripe-webdevelopment.com",
-	"keywords": ["staffprofiles", "silverstripe"],
+	"keywords": ["staffprofiles", "silverstripe", "team", "staff", "people", "profiles", "about", "staff"],
 	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
 	"authors":[
 		{
@@ -17,6 +17,10 @@
 		"silverstripe/framework": "~3.1",
 		"silverstripe/cms": "~3.1",
 		"sunnysideup/hidemailto": "~3.1"
+	},
+	"suggest": {
+		"sunnysideup/dataobjectsorter": "allow lists to be sorted OPTION 1",
+		"undefinedoffset/sortablegridfield": "allow lists to be sorted OPTION 2"
 	},
 	"extra": {
 		"installer-name": "staffprofiles"

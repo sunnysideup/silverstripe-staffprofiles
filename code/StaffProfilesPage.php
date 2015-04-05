@@ -44,9 +44,12 @@ class StaffProfilesPage extends Page {
 				"StaffProfiles",
 				"Staff Profiles",
 				StaffProfile::get(),
-				GridFieldConfig_RelationEditor::create()
+				$config = GridFieldConfig_RelationEditor::create()
 			)
 		);
+		if(class_exists("GridFieldSortableRows")) {
+			$config->addComponent(new GridFieldSortableRows('Sort'));
+		}
 		return $fields;
 	}
 

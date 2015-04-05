@@ -77,6 +77,10 @@ class StaffProfile extends DataObject {
 			. implode("], [", array_keys($this->Config()->get("subject_place_holders")))
 			. "]"
 		);
+		if(class_exists("DataObjectSorterController") && $this->hasExtension("DataObjectSorterController")) {
+			$fields->addFieldToTab("Root.Sort", new LiteralField("InvitationToSort", $this->dataObjectSorterPopupLink()));
+			$fields->removeFieldFromTab("Root.Main", "Sort");
+		}
 		return $fields;
 	}
 
