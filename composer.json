@@ -3,8 +3,10 @@
     "type": "silverstripe-module",
     "description": "add staff profiles to a Silverstripe Website",
     "keywords": [
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
         "staffprofiles",
-        "silverstripe",
         "team",
         "staff",
         "people",
