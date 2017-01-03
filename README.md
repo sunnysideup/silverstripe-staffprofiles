@@ -1,44 +1,72 @@
-STAFF PROFILES
-================================================================================
+# Silverstripe staffprofiles module
+[![Build Status](https://travis-ci.org/sunnysideup/silverstripe-staffprofiles.svg?branch=master)](https://travis-ci.org/sunnysideup/silverstripe-staffprofiles)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-staffprofiles/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-staffprofiles/?branch=master)
+[![codecov.io](https://codecov.io/github/sunnysideup/silverstripe-staffprofiles/coverage.svg?branch=master)](https://codecov.io/github/sunnysideup/silverstripe-staffprofiles?branch=master)
+![helpfulrobot](https://helpfulrobot.io/sunnysideup/staffprofiles/badge)
 
-Add profiles of a bunch of people (e.g. employees / shareholders / volunteers)
-to your Silverstripe Website.
-
-
-Developer
------------------------------------------------
-Nicolaas [at] sunnysideup.co.nz
-
-
-Requirements
------------------------------------------------
-see composer.json
+[![Latest Stable Version](https://poser.pugx.org/sunnysideup/staffprofiles/version)](https://packagist.org/packages/sunnysideup/staffprofiles)
+[![License](https://poser.pugx.org/sunnysideup/staffprofiles/license)](https://packagist.org/packages/sunnysideup/staffprofiles)
+[![Monthly Downloads](https://poser.pugx.org/sunnysideup/staffprofiles/d/monthly)](https://packagist.org/packages/sunnysideup/staffprofiles)
 
 
-Documentation
------------------------------------------------
-Please contact author for more details.
-
-Any bug reports and/or feature requests will be
-looked at in detail
-
-We are also very happy to provide personalised support
-for this module in exchange for a small donation.
-
-
-Installation Instructions
------------------------------------------------
-1. Find out how to add modules to SS and add module as per usual.
-
-2. Review configs and add entries to mysite/_config/config.yml
-(or similar) as necessary.
-In the _config/ folder of this module
-you can usually find some examples of config options (if any).
-
-3. review css and templates and see if you need to theme it
-(rather than using the "unthemed" default provided.
-
-4. create a page icon: mysite/images/treeicons/StaffProfilesPage-file.gif
+## Documentation
 
 
 
+ * [Developer Docs](docs/en/INDEX.md)
+ * [User Guide](docs/en/userguide.md)
+ * [API](http://ssmods.com/apis/staffprofiles/docs/en/api/)
+
+## Requirements
+
+
+
+see [composer.json](composer.json) for details
+
+### Suggested Modules
+
+
+
+see [composer.json](composer.json) for details
+
+
+## Installation
+
+
+```
+composer require sunnysideup/staffprofiles
+```
+
+### Configuration
+
+
+
+In the `_config` folder you will find the `staffprofiles.yml.example`
+file that shows options for the configuration of this module.
+
+We recommend that you:
+
+  1. copy these `staffprofiles.yml.example` files into your
+`mysite/_config` folder
+  2. remove the .example extension
+  3. delete the lines you not care about, and
+  4. adjust the configurations that you would like to use.
+
+
+## Contributing
+
+
+
+We welcome any contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+
+## Paid assistance
+
+
+
+You can pay us to create an improved / adapted version of this module for your own projects.  Please contact us if you like to find out more: [www.sunnysideup.co.nz](http://www.sunnysideup.co.nz)
+
+## Author
+
+
+
+Sunny Side Up Ltd.
